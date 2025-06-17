@@ -64,8 +64,10 @@ COPY --from=builder /app/node_modules ./node_modules
 # Copy package.json from the 'builder' stage
 COPY --from=builder /app/package.json ./package.json
 
-# Create a cache directory for Next.js image optimization
-RUN mkdir -p .next/cache/images && chown -R nextjs:nodejs .next/cache
+# Create cache directories for Next.js image optimization
+RUN mkdir -p .next/cache/images && \
+    mkdir -p .next/cache/next-minifier && \
+    chown -R nextjs:nodejs .next/cache
 
 # Switch to the 'nextjs' user
 USER nextjs
