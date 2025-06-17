@@ -2,7 +2,15 @@
 const nextConfig = {
   output: "standalone",
   images: {
-    domains: ["www.sloshout.com", "images.unsplash.com"],
+    domains: ["images.unsplash.com", "localhost"],
+    unoptimized: false,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
