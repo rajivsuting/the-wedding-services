@@ -11,11 +11,12 @@ export default function AboutPage() {
       <div className="relative h-[50vh] bg-black">
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50 z-10" />
         <Image
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070"
+          src="/venue2.jpg"
           alt="About Us"
           fill
           priority
           className="object-cover"
+          sizes="100vw"
         />
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="text-center">
@@ -136,22 +137,19 @@ export default function AboutPage() {
               {
                 name: "Priya Sharma",
                 role: "Founder & CEO",
-                image:
-                  "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1000",
+                image: "/makeup1.jpg",
                 bio: "With over 15 years of experience in the wedding industry, Priya leads our team with passion and expertise.",
               },
               {
                 name: "Rahul Patel",
                 role: "Creative Director",
-                image:
-                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000",
+                image: "/photoshoot1.jpg",
                 bio: "Rahul brings creativity and innovation to every wedding we plan, ensuring unique and memorable experiences.",
               },
               {
                 name: "Ananya Singh",
                 role: "Head of Operations",
-                image:
-                  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000",
+                image: "/venue1.jpg",
                 bio: "Ananya ensures smooth execution of every wedding, managing our team and vendor relationships.",
               },
             ].map((member, index) => (
@@ -169,6 +167,7 @@ export default function AboutPage() {
                     alt={member.name}
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-6">

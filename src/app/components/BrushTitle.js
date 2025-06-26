@@ -9,7 +9,7 @@ const BrushTitle = ({ children, className = "" }) => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-4xl md:text-5xl font-bold text-[#2d2b2c] relative z-10"
+        className="font-playfair text-5xl md:text-6xl font-bold text-[#212b46] relative z-10"
       >
         {children}
       </motion.h2>

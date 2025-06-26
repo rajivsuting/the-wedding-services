@@ -26,8 +26,7 @@ const services = [
       "Cost-saving recommendations",
       "Payment schedule planning",
     ],
-    image:
-      "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=2071&auto=format&fit=crop",
+    image: "/food1.jpg",
   },
   {
     id: 2,
@@ -41,8 +40,7 @@ const services = [
       "Package deals with venues",
       "Hidden gem locations",
     ],
-    image:
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop",
+    image: "/venue1.jpg",
   },
   {
     id: 3,
@@ -56,8 +54,7 @@ const services = [
       "Quality-cost optimization",
       "Long-term partner rates",
     ],
-    image:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop",
+    image: "/photoshoot1.jpg",
   },
   {
     id: 4,
@@ -71,8 +68,7 @@ const services = [
       "Seasonal decor savings",
       "Multi-purpose decor",
     ],
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
+    image: "/venue2.jpg",
   },
   {
     id: 5,
@@ -86,8 +82,7 @@ const services = [
       "Accommodation deals",
       "Guest count management",
     ],
-    image:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop",
+    image: "/food2.jpg",
   },
   {
     id: 6,
@@ -101,8 +96,7 @@ const services = [
       "Efficient resource allocation",
       "Contingency planning",
     ],
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
+    image: "/photoshoot2.jpg",
   },
 ];
 
@@ -139,7 +133,7 @@ export default function ServicesPage() {
       <div className="relative h-[40vh] bg-black">
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50 z-10" />
         <Image
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop"
+          src="/venue1.jpg"
           alt="Wedding Services"
           fill
           priority
@@ -169,12 +163,14 @@ export default function ServicesPage() {
               transition={{ duration: 0.5 }}
               className="bg-white rounded-xl shadow-md overflow-hidden"
             >
-              <div className="relative h-48">
+              <div className="relative aspect-[4/3] w-full">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={service.id === 1}
                 />
               </div>
               <div className="p-6">

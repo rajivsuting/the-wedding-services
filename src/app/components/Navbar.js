@@ -74,7 +74,7 @@ const Navbar = () => {
             <Link href="/" className={getLinkClasses("/")}>
               Home
             </Link>
-            <Link href="/venues" className={getLinkClasses("/venues")}>
+            {/* <Link href="/venues" className={getLinkClasses("/venues")}>
               Venues
             </Link>
             <Link
@@ -82,7 +82,7 @@ const Navbar = () => {
               className={getLinkClasses("/destinations")}
             >
               Destinations
-            </Link>
+            </Link> */}
             <Link href="/services" className={getLinkClasses("/services")}>
               Services
             </Link>

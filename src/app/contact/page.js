@@ -44,11 +44,12 @@ export default function ContactPage() {
       <div className="relative h-[40vh] bg-black">
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50 z-10" />
         <Image
-          src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop"
+          src="/venue2.jpg"
           alt="Contact Us"
           fill
           priority
           className="object-cover"
+          sizes="100vw"
         />
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="text-center">

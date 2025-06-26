@@ -43,6 +43,14 @@
   }
 }
 
+body,
+html,
+* {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 html {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
@@ -128,15 +136,14 @@ body {
 }
 
 /* Typography scale */
-h1,
-h2,
+/* h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: "Playfair Display", serif;
   font-weight: 700;
-}
+} */
 
 /* Font weights */
 .font-light {
@@ -196,4 +203,14 @@ label {
 .body-text {
   font-weight: 300;
   line-height: 1.6;
+}
+
+.font-stylescript {
+  font-family: "Style Script", cursive !important;
+}
+
+.font-playfair {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }

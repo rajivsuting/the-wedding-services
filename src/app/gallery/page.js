@@ -51,21 +51,21 @@ const realWeddings = [
       "The attention to detail and personalized service made our wedding truly special. Worth every penny!",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
+        src: "/venue1.jpg",
         alt: "Priya & Rahul's Wedding Ceremony",
         category: "Venues",
         title: "The Leela Palace",
         description: "A stunning lakeside palace with panoramic views",
       },
       {
-        src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop",
+        src: "/venue2.jpg",
         alt: "Wedding Reception Setup",
         category: "Decorations",
         title: "Reception Setup",
         description: "Elegant reception decoration with floral arrangements",
       },
       {
-        src: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop",
+        src: "/food1.jpg",
         alt: "Couple's First Dance",
         category: "Entertainment",
         title: "First Dance",
@@ -85,21 +85,21 @@ const realWeddings = [
       "The team's expertise in handling both traditional and modern elements made our wedding unique.",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop",
+        src: "/photoshoot1.jpg",
         alt: "Beach Wedding Ceremony",
         category: "Venues",
         title: "Taj Exotica Resort",
         description: "Beachfront luxury with Portuguese architecture",
       },
       {
-        src: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=2070&auto=format&fit=crop",
+        src: "/photoshoot2.jpg",
         alt: "Reception Decoration",
         category: "Decorations",
         title: "Beachside Reception",
         description: "Romantic beachside setup with elegant lighting",
       },
       {
-        src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop",
+        src: "/photoshoot3.jpg",
         alt: "Wedding Celebration",
         category: "Entertainment",
         title: "Beach Party",
@@ -119,21 +119,21 @@ const realWeddings = [
       "The venue was perfect, and the team helped us stay within our budget while creating a magical experience.",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop",
+        src: "/makeup1.jpg",
         alt: "Mountain Wedding Setup",
         category: "Venues",
         title: "Mountain Resort",
         description: "Scenic mountain venue with panoramic views",
       },
       {
-        src: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=2070&auto=format&fit=crop",
+        src: "/makeup2.jpg",
         alt: "Wedding Ceremony",
         category: "Decorations",
         title: "Mountain Ceremony",
         description: "Intimate ceremony with natural beauty",
       },
       {
-        src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop",
+        src: "/makeup3.jpg",
         alt: "Reception Celebration",
         category: "Entertainment",
         title: "Mountain Celebration",
@@ -189,11 +189,12 @@ export default function GalleryPage() {
       <div className="relative h-[40vh] bg-black">
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50 z-10" />
         <Image
-          src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop"
+          src="/venue1.jpg"
           alt="Gallery Hero"
           fill
           priority
           className="object-cover"
+          sizes="100vw"
         />
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="text-center">

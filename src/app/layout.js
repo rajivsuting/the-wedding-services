@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -9,8 +8,6 @@ import {
   trackResourceTiming,
 } from "./utils/performance";
 import { siteConfig } from "./config/site";
-
-const inter = Inter({ subsets: ["latin"] });
 
 // Combine all keywords into a single array for metadata
 const allKeywords = [
@@ -76,8 +73,12 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className={inter.className}>
+      <body>
         <ErrorBoundary>
           <Navbar />
           <main className="min-h-screen">{children}</main>

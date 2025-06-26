@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import BrushTitle from "./BrushTitle";
 
 const steps = [
   {
     number: "01",
-    title: "Share Your Requirements",
+    title: "Tell Us Your Budget & Vision",
     description:
-      "Tell us your event date, budget, location, type of venue, guest count, and more.",
+      "Share your dream wedding and how much you'd like to spend. We'll show you what's possible—without pressure.",
     icon: (
       <svg
         className="w-12 h-12"
@@ -26,9 +27,9 @@ const steps = [
   },
   {
     number: "02",
-    title: "Get a Personalized Proposal",
+    title: "Get Your Custom Plan & Quote",
     description:
-      "Receive the best deals on venue, catering, and decor tailored to your preferences.",
+      "We create a tailored wedding blueprint, complete with destination options, cost breakdown, and vendor suggestions.",
     icon: (
       <svg
         className="w-12 h-12"
@@ -40,16 +41,16 @@ const steps = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={1.5}
-          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
         />
       </svg>
     ),
   },
   {
     number: "03",
-    title: "Confirm and Book",
+    title: "Relax While We Bring It to Life",
     description:
-      "Pay a minimum amount to secure your dream wedding venue and services.",
+      "From booking to 'I do', we handle the details. You show up, get married, and make unforgettable memories—stress-free and budget-happy.",
     icon: (
       <svg
         className="w-12 h-12"
@@ -61,7 +62,7 @@ const steps = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={1.5}
-          d="M5 13l4 4L19 7"
+          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
         />
       </svg>
     ),
@@ -93,9 +94,9 @@ const HowItWorks = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title" style={{ color: "var(--dark)" }}>
+          <BrushTitle className="mb-4" style={{ color: "var(--dark)" }}>
             How It Works
-          </h2>
+          </BrushTitle>
           <p className="section-subtitle">
             Your journey to a perfect wedding starts here
           </p>

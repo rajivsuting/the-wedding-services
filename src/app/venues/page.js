@@ -7,9 +7,9 @@ import Link from "next/link";
 // Separate the venue card into its own component for better code splitting
 function VenueCard({ venue }) {
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-      <Link href={`/venues/${venue.id}`}>
-        <div className="relative h-64">
+    <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+      <Link href={`/venues/${venue.id}`} className="flex flex-col h-full">
+        <div className="relative aspect-[4/3] w-full">
           <Image
             src={venue.image}
             alt={venue.name}
@@ -19,14 +19,14 @@ function VenueCard({ venue }) {
             priority={venue.id === 1}
             loading={venue.id === 1 ? "eager" : "lazy"}
           />
-          <div className="absolute top-4 right-4 bg-[#ee4c59] text-white px-4 py-2 rounded-full text-sm font-medium">
+          <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-[#ee4c59] text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
             {venue.price}
           </div>
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-            <div className="flex items-center text-white">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2 sm:p-4">
+            <div className="flex items-center text-white text-xs sm:text-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-2"
+                className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -48,37 +48,43 @@ function VenueCard({ venue }) {
             </div>
           </div>
         </div>
-        <div className="p-6">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-2xl font-bold text-gray-900">{venue.name}</h3>
+        <div className="p-4 sm:p-6 flex flex-col flex-grow">
+          <div className="flex items-center justify-between mb-2 sm:mb-4">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 line-clamp-2">
+              {venue.name}
+            </h3>
             <div className="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-yellow-400"
+                className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
-              <span className="ml-1 text-gray-600">{venue.rating}</span>
+              <span className="ml-1 text-gray-600 text-xs sm:text-sm">
+                {venue.rating}
+              </span>
             </div>
           </div>
-          <p className="text-gray-700 mb-4">{venue.description}</p>
-          <div className="flex flex-wrap gap-2 mb-4">
+          <p className="text-gray-700 text-sm sm:text-base mb-2 sm:mb-4 line-clamp-3">
+            {venue.description}
+          </p>
+          <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-4">
             {venue.features.map((feature, index) => (
               <span
                 key={index}
-                className="bg-[#faf3f0] text-[#ee4c59] px-3 py-1 rounded-full text-sm"
+                className="bg-[#faf3f0] text-[#ee4c59] px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm"
               >
                 {feature}
               </span>
             ))}
           </div>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center text-gray-500">
+          <div className="flex items-center justify-between mt-auto">
+            <div className="flex items-center text-gray-500 text-xs sm:text-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-1"
+                className="h-4 w-4 sm:h-5 sm:w-5 mr-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -92,7 +98,7 @@ function VenueCard({ venue }) {
               </svg>
               <span>{venue.capacity}</span>
             </div>
-            <button className="bg-[#ee4c59] text-white px-6 py-2 rounded-full hover:bg-[#ee4c59]/90 transition-colors">
+            <button className="bg-[#ee4c59] text-white px-4 sm:px-6 py-1 sm:py-2 rounded-full hover:bg-[#ee4c59]/90 transition-colors text-xs sm:text-sm">
               View Details
             </button>
           </div>
@@ -487,7 +493,7 @@ export default function VenuesPage() {
               </div>
             </div>
             <Suspense fallback={<VenuesLoading />}>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 auto-rows-fr">
                 {filteredVenues.map((venue) => (
                   <VenueCard key={venue.id} venue={venue} />
                 ))}

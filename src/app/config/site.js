@@ -3,8 +3,7 @@ export const siteConfig = {
   description:
     "Plan your dream destination wedding in India without breaking the bank. Expert wedding planning services, affordable venues, and stress-free coordination.",
   url: "https://wedding-services-app.vercel.app",
-  ogImage:
-    "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
+  ogImage: "/venue1.jpg",
 
   // Enhanced SEO settings
   seo: {
@@ -20,7 +19,7 @@ export const siteConfig = {
       site_name: "Wedding Services",
       images: [
         {
-          url: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
+          url: "/venue1.jpg",
           width: 1200,
           height: 630,
           alt: "Wedding Services - Budget Destination Weddings in India",
