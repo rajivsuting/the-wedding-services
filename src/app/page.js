@@ -7,6 +7,7 @@ import Services from "./components/Services";
 import AboutUs from "./components/AboutUs";
 import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
+import Statistics from "./components/Statistics";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Destinations />
       <HowItWorks />
       <AboutUs />
+      <Statistics />
       <Testimonials />
       <CTA />
     </>
