@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
@@ -10,7 +10,6 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,41 +28,39 @@ const Navbar = () => {
   };
 
   const getLinkClasses = (path) => {
+    const baseClasses = "text-lg font-medium transition-colors";
     const isActiveLink = isActive(path);
-    console.log("getLinkClasses", { path, pathname, isActive: isActiveLink });
-    return [
-      "text-lg font-medium transition-colors text-gray-800 hover:text-[#ee4c59]",
-      isActiveLink &&
-        "!text-[#ee4c59] font-semibold underline underline-offset-4",
-    ]
-      .filter(Boolean)
-      .join(" ");
+    const activeClasses = isActiveLink ? "text-[#ee4c59] font-semibold" : "";
+    const hoverClasses = isScrolled
+      ? "text-gray-800 hover:text-[#ee4c59]"
+      : "text-white hover:text-[#ee4c59]";
+
+    return `${baseClasses} ${activeClasses} ${
+      !isActiveLink ? hoverClasses : ""
+    }`;
   };
 
   const getMobileLinkClasses = (path) => {
+    const baseClasses = "text-lg font-medium transition-colors";
     const isActiveLink = isActive(path);
-    console.log("getMobileLinkClasses", {
-      path,
-      pathname,
-      isActive: isActiveLink,
-    });
-    return [
-      "text-lg font-medium transition-colors text-gray-800 hover:text-[#ee4c59]",
-      isActiveLink &&
-        "!text-[#ee4c59] font-semibold underline underline-offset-4",
-    ]
-      .filter(Boolean)
-      .join(" ");
+    const activeClasses = isActiveLink
+      ? "text-[#ee4c59] font-semibold"
+      : "text-gray-800 hover:text-[#ee4c59]";
+    return `${baseClasses} ${activeClasses}`;
   };
 
   return (
-    <nav className="fixed w-full z-50 transition-all duration-300 bg-white shadow-lg">
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white/80 backdrop-blur-md shadow-lg" : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png"
+              src={isScrolled ? "/logo.png" : "/logo-white.png"}
               alt="Wedding Services Logo"
               width={200}
               height={100}
@@ -93,12 +90,6 @@ const Navbar = () => {
             <Link href="/contact" className={getLinkClasses("/contact")}>
               Contact Us
             </Link>
-            <button
-              className="ml-4 bg-[#ef4c57] text-white px-5 py-2 rounded-full font-semibold shadow text-base"
-              onClick={() => router.push("/plan")}
-            >
-              Get Free Quote
-            </button>
           </div>
 
           {/* Mobile Menu Button */}

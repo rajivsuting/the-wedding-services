@@ -88,10 +88,10 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/venues"
+                  href="/"
                   className="hover:text-[#ee4c59] transition-colors"
                 >
-                  Wedding Venues
+                  Home
                 </Link>
               </li>
               <li>
@@ -99,7 +99,23 @@ export default function Footer() {
                   href="/services"
                   className="hover:text-[#ee4c59] transition-colors"
                 >
-                  Our Services
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/packages"
+                  className="hover:text-[#ee4c59] transition-colors"
+                >
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/gallery"
+                  className="hover:text-[#ee4c59] transition-colors"
+                >
+                  Gallery
                 </Link>
               </li>
               <li>
@@ -107,7 +123,7 @@ export default function Footer() {
                   href="/about"
                   className="hover:text-[#ee4c59] transition-colors"
                 >
-                  About Us
+                  About
                 </Link>
               </li>
               <li>
@@ -115,15 +131,7 @@ export default function Footer() {
                   href="/contact"
                   className="hover:text-[#ee4c59] transition-colors"
                 >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="hover:text-[#ee4c59] transition-colors"
-                >
-                  Wedding Blog
+                  Contact Us
                 </Link>
               </li>
             </ul>
@@ -137,7 +145,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/services/venue-booking"
+                  href="/services"
                   className="hover:text-[#ee4c59] transition-colors"
                 >
                   Venue Booking
@@ -145,7 +153,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/catering"
+                  href="/services"
                   className="hover:text-[#ee4c59] transition-colors"
                 >
                   Catering
@@ -153,7 +161,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/decor"
+                  href="/services"
                   className="hover:text-[#ee4c59] transition-colors"
                 >
                   Wedding Decor
@@ -161,7 +169,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/photography"
+                  href="/services"
                   className="hover:text-[#ee4c59] transition-colors"
                 >
                   Photography
@@ -169,7 +177,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/entertainment"
+                  href="/services"
                   className="hover:text-[#ee4c59] transition-colors"
                 >
                   Entertainment
@@ -209,7 +217,7 @@ export default function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm">
-              © {new Date().getFullYear()} Wedding Services. All rights
+              © {new Date().getFullYear()} The Wedding Services. All rights
               reserved.
             </div>
             <div className="flex space-x-6 text-sm">

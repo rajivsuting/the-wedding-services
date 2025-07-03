@@ -17,18 +17,21 @@ import {
   GiLotus,
   GiStoneTower,
   GiBoatFishing,
+  GiElephant,
+  GiMountainCave,
+  GiForestCamp,
+  GiTempleGate,
 } from "react-icons/gi";
 
 const monumentIcons = {
-  goa: <FaUmbrellaBeach className="w-16 h-16 text-[#ee4c59] mx-auto" />,
-  udaipur: <GiIndianPalace className="w-16 h-16 text-[#ee4c59] mx-auto" />,
-  shimla: <FaMountain className="w-16 h-16 text-[#ee4c59] mx-auto" />,
-  // kerala: <FaWater className="w-16 h-16 text-[#ee4c59] mx-auto" />,
-  agra: <FaLandmark className="w-16 h-16 text-[#ee4c59] mx-auto" />,
+  jimcorbett: <GiForestCamp className="w-16 h-16 text-[#ee4c59] mx-auto" />,
+  mussoorie: <GiMountainCave className="w-16 h-16 text-[#ee4c59] mx-auto" />,
+  rishikesh: <GiTempleGate className="w-16 h-16 text-[#ee4c59] mx-auto" />,
   jaipur: <GiIndianPalace className="w-16 h-16 text-[#ee4c59] mx-auto" />,
-  hyderabad: <GiStoneTower className="w-16 h-16 text-[#ee4c59] mx-auto" />,
-  mumbai: <FaMonument className="w-16 h-16 text-[#ee4c59] mx-auto" />,
-  delhi: <GiLotus className="w-16 h-16 text-[#ee4c59] mx-auto" />,
+  sariska: <GiElephant className="w-16 h-16 text-[#ee4c59] mx-auto" />,
+  ranthambore: <GiElephant className="w-16 h-16 text-[#ee4c59] mx-auto" />,
+  mathuravrindavan: <GiLotus className="w-16 h-16 text-[#ee4c59] mx-auto" />,
+  others: <FaMapMarkerAlt className="w-16 h-16 text-[#ee4c59] mx-auto" />,
 };
 
 const Destinations = () => {

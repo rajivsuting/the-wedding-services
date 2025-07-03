@@ -7,9 +7,9 @@ import { useState } from "react";
 
 const features = [
   {
-    title: "Budget-First Approach",
+    title: "Venue Selection",
     description:
-      "We reverse-engineer your wedding based on your budget—no hidden fees, no overpriced fluff, just smart, stunning solutions.",
+      "Explore curated venues that fit your vision, guest list, and budget. We help you find the perfect setting.",
     icon: (
       <svg
         className="w-8 h-8"
@@ -27,9 +27,9 @@ const features = [
     ),
   },
   {
-    title: "Transparent Pricing",
+    title: "Featured Hotels",
     description:
-      "Know exactly where your money goes. From décor to destination, we offer complete clarity with no last-minute surprises.",
+      "Enjoy exclusive rates and seamless stays at top hotels. We ensure comfort and convenience for your wedding.",
     icon: (
       <svg
         className="w-8 h-8"
@@ -46,30 +46,10 @@ const features = [
       </svg>
     ),
   },
-  // {
-  //   title: "Vendor Negotiation Experts",
-  //   description:
-  //     "We partner with trusted local vendors and negotiate on your behalf—saving you more without compromising quality.",
-  //   icon: (
-  //     <svg
-  //       className="w-8 h-8"
-  //       fill="none"
-  //       viewBox="0 0 24 24"
-  //       stroke="currentColor"
-  //     >
-  //       <path
-  //         strokeLinecap="round"
-  //         strokeLinejoin="round"
-  //         strokeWidth={1.5}
-  //         d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-  //       />
-  //     </svg>
-  //   ),
-  // },
   {
-    title: "Personalized to You",
+    title: "Featured Destination",
     description:
-      "Whether it's a beachside vow exchange or a royal palace soirée, we personalize every detail to reflect your story and stay within your means.",
+      "Choose breathtaking destinations, from mountains to palaces. We handle every detail for a flawless celebration.",
     icon: (
       <svg
         className="w-8 h-8"
@@ -117,7 +97,7 @@ const FloralSVG = () => (
 const Features = () => {
   const [videoPlaying, setVideoPlaying] = useState(false);
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-20 bg-white relative overflow-hidden overflow-x-hidden">
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -156,9 +136,9 @@ const Features = () => {
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-center">
           {/* Right: Large Vertical Video with Indian wedding vibe (now on right, clean style) */}
           <div className="w-full lg:w-2/5 flex-shrink-0 mb-8 lg:mb-0 flex justify-center relative order-2 lg:order-2">
-            <div className="relative z-10">
+            <div className="relative z-10 w-full">
               {/* Video Player */}
-              <div className="relative aspect-video w-[90vw] max-w-2xl rounded-2xl overflow-hidden shadow-xl bg-black flex items-center justify-center">
+              <div className="relative w-full aspect-[16/9] max-w-2xl rounded-2xl overflow-hidden shadow-xl bg-black flex items-center justify-center">
                 {videoPlaying ? (
                   <iframe
                     width="100%"
@@ -205,7 +185,7 @@ const Features = () => {
           </div>
 
           {/* Left: Vertical Timeline/Stepper (now on left) */}
-          <div className="w-full lg:w-2/5 flex flex-col justify-center relative z-10 order-1 lg:order-1">
+          <div className="w-full lg:w-2/5 flex flex-col justify-center relative z-10 order-1 lg:order-1 mb-10 lg:mb-0">
             {/* Animated gradient timeline line */}
             <motion.div
               className="absolute left-8 top-0 bottom-0 w-1 hidden lg:block"
