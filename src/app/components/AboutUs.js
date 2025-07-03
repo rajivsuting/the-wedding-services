@@ -121,38 +121,42 @@ const AboutUs = () => {
           className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-10"
           style={{ backgroundColor: "var(--primary)" }}
         />
-        <svg
-          className="absolute bottom-0 left-0 w-80 h-80 opacity-10 text-[#ee4c59]"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-        </svg>
       </div>
 
       <div className="container mx-auto px-4 relative">
         {/* Mission Statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <BrushTitle className="mb-4">
-            Making Destination Wedding Dreams Attainable
-          </BrushTitle>
-          <motion.p
-            className="text-lg text-[var(--gray)] max-w-3xl mx-auto"
+        <div className="relative mb-16">
+          <motion.div
+            className="absolute -top-8 -left-8 text-[#ee4c59] opacity-20 z-10"
+            animate={{ y: [0, -16, 0], rotate: [0, 8, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <svg className="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
           >
-            We saw countless couples dreaming of destination weddings but shying
-            away due to perceived costs. Our mission is to demystify the process
-            and prove that an unforgettable, unique celebration is possible, no
-            matter your budget.
-          </motion.p>
-        </motion.div>
+            <BrushTitle className="mb-4">
+              Making Destination Wedding Dreams Attainable
+            </BrushTitle>
+            <motion.p
+              className="text-lg text-[var(--gray)] max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              We saw countless couples dreaming of destination weddings but
+              shying away due to perceived costs. Our mission is to demystify
+              the process and prove that an unforgettable, unique celebration is
+              possible, no matter your budget.
+            </motion.p>
+          </motion.div>
+        </div>
 
         {/* Why Trust Us */}
         {/* <motion.div
