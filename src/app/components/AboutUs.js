@@ -162,7 +162,7 @@ const AboutUs = () => {
         </motion.div>
 
         {/* Why Trust Us */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -183,7 +183,7 @@ const AboutUs = () => {
               <p className="text-[var(--gray)]">{item.description}</p>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* Our Team */}
         {/* <motion.div
@@ -227,7 +227,7 @@ const AboutUs = () => {
         </motion.div> */}
 
         {/* Philosophy */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
@@ -242,7 +242,7 @@ const AboutUs = () => {
             strategists, creative problem-solvers, and your dedicated allies in
             achieving your vision.
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
