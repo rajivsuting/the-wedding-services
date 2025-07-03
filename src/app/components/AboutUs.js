@@ -2,6 +2,13 @@
 
 import { motion } from "framer-motion";
 import BrushTitle from "./BrushTitle";
+import {
+  FaRupeeSign,
+  FaUserCheck,
+  FaGlobeAsia,
+  FaRegLightbulb,
+} from "react-icons/fa";
+import Image from "next/image";
 
 const teamMembers = [
   {
@@ -124,122 +131,115 @@ const AboutUs = () => {
       </div>
 
       <div className="container mx-auto px-4 relative">
-        {/* Mission Statement */}
-        <div className="relative mb-16">
-          <motion.div
-            className="absolute -top-8 -left-8 text-[#ee4c59] opacity-20 z-10"
-            animate={{ y: [0, -16, 0], rotate: [0, 8, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <svg className="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-            </svg>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <BrushTitle className="mb-4">
-              Making Destination Wedding Dreams Attainable
-            </BrushTitle>
-            <motion.p
-              className="text-lg text-[var(--gray)] max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              We saw countless couples dreaming of destination weddings but
-              shying away due to perceived costs. Our mission is to demystify
-              the process and prove that an unforgettable, unique celebration is
-              possible, no matter your budget.
-            </motion.p>
-          </motion.div>
-        </div>
-
-        {/* Why Trust Us */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
-        >
-          {differentiators.map((item, index) => (
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-16">
+          {/* Left: Heading, intro, and features */}
+          <div className="flex-1 flex flex-col gap-8 text-center md:text-left relative">
+            {/* Animated Heart */}
             <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-[var(--gray-light)]"
+              className="absolute -top-10 -left-10 text-[#ee4c59] opacity-20 z-10"
+              animate={{ y: [0, -16, 0], rotate: [0, 8, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
-              <div className="text-[var(--primary)] mb-4">{item.icon}</div>
-              <h3 className="text-xl font-semibold mb-2 text-[var(--dark)]">
-                {item.title}
-              </h3>
-              <p className="text-[var(--gray)]">{item.description}</p>
-            </motion.div>
-          ))}
-        </motion.div> */}
-
-        {/* Our Team */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl font-bold mb-8 text-[var(--dark)]">
-            Meet Our Team
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-[var(--gray-light)]"
+              <svg
+                className="w-20 h-20"
+                fill="currentColor"
+                viewBox="0 0 24 24"
               >
-                <div className="relative h-64">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </motion.div>
+            <BrushTitle className="mb-2">
+              Destination Wedding Services
+            </BrushTitle>
+            <p className="text-lg text-[var(--gray)] max-w-xl mx-auto md:mx-0 mb-4">
+              We can help you create an unforgettable destination wedding that
+              seamlessly blends your vision, budget, and values.
+            </p>
+            {/* Features row as vertical stepper */}
+            <div className="flex flex-col items-center md:items-start w-full max-w-xl mx-auto md:mx-0 mt-8">
+              {/* Vertical Stepper */}
+              <div className="relative flex flex-col gap-12">
+                {/* Step 1 */}
+                <div className="flex items-start gap-5 relative">
+                  <div className="flex flex-col items-center">
+                    <div className="w-14 h-14 rounded-full bg-[#ee4c59]/10 text-[#ee4c59] flex items-center justify-center text-3xl mb-2 border-2 border-[#ee4c59]">
+                      <FaRupeeSign />
+                    </div>
+                    <div className="flex-1 w-1 bg-[#ee4c59]/30 h-16 mx-auto" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg text-[var(--dark)] mb-1">
+                      Tailored to Your Budget
+                    </h4>
+                    <p className="text-[var(--gray)] text-base max-w-md">
+                      We'll work with you to find solutions that fit your
+                      financial plan without compromising on the magic of your
+                      special day.
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-1 text-[var(--dark)]">
-                    {member.name}
-                  </h3>
-                  <p className="text-[var(--primary)] font-medium mb-2">
-                    {member.role}
-                  </p>
-                  <p className="text-[var(--gray)]">{member.description}</p>
+                {/* Step 2 */}
+                <div className="flex items-start gap-5 relative">
+                  <div className="flex flex-col items-center">
+                    <div className="w-14 h-14 rounded-full bg-[#ee4c59]/10 text-[#ee4c59] flex items-center justify-center text-3xl mb-2 border-2 border-[#ee4c59]">
+                      <FaUserCheck />
+                    </div>
+                    <div className="flex-1 w-1 bg-[#ee4c59]/30 h-16 mx-auto" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg text-[var(--dark)] mb-1">
+                      Personalized Celebration
+                    </h4>
+                    <p className="text-[var(--gray)] text-base max-w-md">
+                      We ensure a joyful event that truly reflects your unique
+                      style and preferences.
+                    </p>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
+                {/* Step 3 */}
+                <div className="flex items-start gap-5 relative">
+                  <div className="flex flex-col items-center">
+                    <div className="w-14 h-14 rounded-full bg-[#ee4c59]/10 text-[#ee4c59] flex items-center justify-center text-3xl mb-2 border-2 border-[#ee4c59]">
+                      <FaGlobeAsia />
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg text-[var(--dark)] mb-1">
+                      Culturally Immersive Experience
+                    </h4>
+                    <p className="text-[var(--gray)] text-base max-w-md">
+                      We infuse local charm, heritage, and a sense of adventure
+                      into every detail, making your wedding truly unique and
+                      memorable.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Optional Offering Callout */}
+            <div className="flex items-center gap-3 bg-white/80 backdrop-blur-md border-l-4 border-[#ee4c59] rounded-xl shadow-lg px-6 py-4 w-full max-w-2xl mt-4 mx-auto">
+              <FaRegLightbulb className="text-[#ee4c59] text-xl" />
+              <span className="italic text-[var(--gray)] text-base">
+                We can also assist you in creating a culturally rich and
+                responsible destination wedding, an experience you and your
+                family will cherish forever.
+              </span>
+            </div>
           </div>
-        </motion.div> */}
-
-        {/* Philosophy */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="bg-[var(--primary)]/5 rounded-2xl p-8 md:p-12 text-center border border-[var(--primary)]/10"
-        >
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[var(--dark)]">
-            Our Philosophy
-          </h2>
-          <p className="text-lg text-[var(--gray)] max-w-3xl mx-auto">
-            We believe in transparent pricing, ingenious solutions, and never
-            compromising on the magic. We're not just planners; we're budget
-            strategists, creative problem-solvers, and your dedicated allies in
-            achieving your vision.
-          </p>
-        </motion.div> */}
+          {/* Right: Celebration image */}
+          <div className="flex-1 flex justify-center md:justify-end">
+            <div className="relative w-[400px] h-[300px] md:w-[550px] md:h-[400px] rounded-2xl shadow-lg overflow-hidden">
+              <Image
+                src="/about.png"
+                alt="Celebration with confetti and balloons"
+                fill
+                priority
+                className="object-cover rounded-2xl"
+                sizes="(max-width: 768px) 100vw, 550px"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
